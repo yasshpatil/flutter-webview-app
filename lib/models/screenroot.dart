@@ -14,8 +14,8 @@ class ScreenRoot extends StatefulWidget {
 class _ScreenRootState extends State<ScreenRoot> {
   List<Widget> listScreens = [
     const ScreenYummys(),
-    // const ScreenGlosary(),
-    const ScreenAccount(),
+    const ScreenGlosary(),
+    // const ScreenAccount(),
   ];
   int currentIndex = 0;
 
@@ -41,14 +41,14 @@ class _ScreenRootState extends State<ScreenRoot> {
             icon: Icon(Icons.home),
             label: 'Food Order',
           ),
-          // BottomNavigationBarItem(
-          //   icon: Icon(Icons.book),
-          //   label: 'Grocery',
-          // ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            label: 'Account',
+            icon: Icon(Icons.book),
+            label: 'Grocery',
           ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.account_circle),
+          //   label: 'Account',
+          // ),
         ],
       ),
     );
