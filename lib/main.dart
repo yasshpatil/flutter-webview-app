@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Lato',
         primarySwatch: const MaterialColor(
           0xFF000000,
-          <int, Color>{ 
+          <int, Color>{
             50: Color(0xFF000000),
             100: Color(0xFF000000),
             200: Color(0xFF000000),
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: const ScreenRoot(),
-      debugShowCheckedModeBanner: false ,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

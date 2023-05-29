@@ -4,7 +4,9 @@ import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 
-void main() => runApp(const MaterialApp(home: ScreenMyFoodOrder()));
+void main() {
+  runApp(const MaterialApp(home: ScreenMyFoodOrder()));
+}
 
 class ScreenMyFoodOrder extends StatefulWidget {
   const ScreenMyFoodOrder({Key? key}) : super(key: key);
@@ -41,7 +43,7 @@ class _ScreenMyFoodOrderState extends State<ScreenMyFoodOrder> {
       ..setNavigationDelegate(
         NavigationDelegate(
           onProgress: (int progress) {
-            debugPrint('WebView is loading (progress : $progress%)');
+            debugPrint('WebView is loading (progress: $progress%)');
           },
           onPageStarted: (String url) {
             debugPrint('Page started loading: $url');
@@ -59,16 +61,15 @@ Page resource error:
           ''');
           },
           onNavigationRequest: (NavigationRequest request) {
-            if (request.url
-                .startsWith('https://www.gofoodieonline.com/trackorder')) {
-              debugPrint('blocking navigation to ${request.url}');
+            if (request.url.startsWith('https://www.gofoodieonline.com/trackorder')) {
+              debugPrint('Blocking navigation to ${request.url}');
               return NavigationDecision.prevent;
             }
-            debugPrint('allowing navigation to ${request.url}');
+            debugPrint('Allowing navigation to ${request.url}');
             return NavigationDecision.navigate;
           },
           onUrlChange: (UrlChange change) {
-            debugPrint('url change to ${change.url}');
+            debugPrint('URL changed to ${change.url}');
           },
         ),
       )
@@ -101,8 +102,9 @@ Page resource error:
       backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.only(top: padding),
-        child: Expanded(child: WebViewWidget(controller: _controller)),
+        child: WebViewWidget(controller: _controller),
       ),
     );
   }
 }
+

@@ -14,7 +14,7 @@ class ScreenRoot extends StatefulWidget {
 class _ScreenRootState extends State<ScreenRoot> {
   List<Widget> listScreens = [
     const ScreenYummys(),
-    const ScreenGlosary(),
+    const ScreenGrocery(),
     // const ScreenAccount(),
   ];
   int currentIndex = 0;
