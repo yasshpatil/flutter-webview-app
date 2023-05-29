@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:web_view/widgets/widget_account.dart';
 import 'package:web_view/widgets/widget_grocery.dart';
 import 'package:web_view/widgets/widget_yummys.dart';
 
@@ -14,7 +13,7 @@ class ScreenRoot extends StatefulWidget {
 class _ScreenRootState extends State<ScreenRoot> {
   List<Widget> listScreens = [
     const ScreenYummys(),
-    const ScreenGlosary(),
+    const ScreenGrocery(),
     // const ScreenAccount(),
   ];
   int currentIndex = 0;
