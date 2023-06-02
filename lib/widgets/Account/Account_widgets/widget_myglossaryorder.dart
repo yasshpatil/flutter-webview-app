@@ -7,17 +7,17 @@ import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 
 void main() {
-  runApp(const MaterialApp(home: WidgetMyFoodOrder()));
+  runApp(const MaterialApp(home: WidgetMyGlossaryOrder()));
 }
 
-class WidgetMyFoodOrder extends StatefulWidget {
-  const WidgetMyFoodOrder({Key? key}) : super(key: key);
+class WidgetMyGlossaryOrder extends StatefulWidget {
+  const WidgetMyGlossaryOrder({Key? key}) : super(key: key);
 
   @override
-  State<WidgetMyFoodOrder> createState() => _WidgetMyFoodOrderState();
+  State<WidgetMyGlossaryOrder> createState() => _WidgetMyGlossaryOrderState();
 }
 
-class _WidgetMyFoodOrderState extends State<WidgetMyFoodOrder> {
+class _WidgetMyGlossaryOrderState extends State<WidgetMyGlossaryOrder> {
   late final WebViewController _controller;
 
   @override
