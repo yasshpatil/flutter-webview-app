@@ -81,7 +81,7 @@ Page resource error:
           );
         },
       )
-      ..loadRequest(Uri.parse('https://www.gofoodieonline.com/trackorder'));
+      ..loadRequest(Uri.parse('https://www.zomato.com/Myorder/reviews'));
 
     // #docregion platform_features
     if (controller.platform is AndroidWebViewController) {

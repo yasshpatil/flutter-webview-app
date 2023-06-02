@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:web_view/widgets/Account/widget_account.dart';
 import 'package:web_view/widgets/grocery/widget_grocery.dart';
 import '../widgets/food order/widget_yummys.dart';
 
@@ -14,7 +15,7 @@ class _ScreenRootState extends State<ScreenRoot> {
   List<Widget> listScreens = [
     const ScreenYummys(),
     const ScreenGrocery(),
-    // const ScreenAccount(),
+    const ScreenAccount(),
   ];
   int currentIndex = 0;
 
@@ -44,10 +45,10 @@ class _ScreenRootState extends State<ScreenRoot> {
             icon: Icon(Icons.book),
             label: 'Grocery',
           ),
-          // BottomNavigationBarItem(
-          //   icon: Icon(Icons.account_circle),
-          //   label: 'Account',
-          // ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle),
+            label: 'Account',
+          ),
         ],
       ),
     );
