@@ -33,24 +33,6 @@ class _ScreenYummysState extends State<ScreenYummys>
       ..setBackgroundColor(const Color(0x00000000))
       ..setNavigationDelegate(
         NavigationDelegate(
-          onProgress: (int progress) {
-            log('WebView is loading (progress: $progress%)');
-          },
-          onPageStarted: (String url) {
-            log('Page started loading: $url');
-          },
-          onPageFinished: (String url) {
-            log('Page finished loading: $url');
-          },
-          onWebResourceError: (WebResourceError error) {
-            log('''
-Page resource error:
-  code: ${error.errorCode}
-  description: ${error.description}
-  errorType: ${error.errorType}
-  isForMainFrame: ${error.isForMainFrame}
-          ''');
-          },
           onNavigationRequest: (NavigationRequest request) {
             final url = request.url;
 
@@ -58,7 +40,6 @@ Page resource error:
               launchAndroidPaymentApp(url);
               return NavigationDecision.prevent;
             }
-
             return NavigationDecision.navigate;
           },
           onUrlChange: (UrlChange change) {
