@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:web_view/widgets/account/Account_widgets/widget_myglossaryorder.dart';
 
 import 'Account_widgets/widget_myfoodorder.dart';
 
@@ -58,7 +59,14 @@ class ScreenAccount extends StatelessWidget {
                 leading: const Icon(Icons.book),
                 title: const Text('My Glossary Orders'),
                 trailing: const Icon(Icons.navigate_next),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const WidgetMyGlossaryOrder(),
+                    ),
+                  );
+                },
               ),
             ),
             Divider(

@@ -45,7 +45,7 @@ class _WidgetMyGlossaryOrderState extends State<WidgetMyGlossaryOrder> {
       ..setNavigationDelegate(
         NavigationDelegate(
           onNavigationRequest: (NavigationRequest request) {
-            if (request.url.startsWith('https://www.zomato.com/account/reviews')) {
+            if (request.url.startsWith('https://www.flipkart.com/s')) {
               log('Blocking navigation to ${request.url}');
               return NavigationDecision.prevent;
             }
@@ -65,7 +65,7 @@ class _WidgetMyGlossaryOrderState extends State<WidgetMyGlossaryOrder> {
           );
         },
       )
-      ..loadRequest(Uri.parse('https://www.zomato.com/Myorder/reviews'));
+      ..loadRequest(Uri.parse('https://www.flipkart.com/'));
 
     // #docregion platform_features
     if (controller.platform is AndroidWebViewController) {

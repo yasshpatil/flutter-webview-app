@@ -46,31 +46,29 @@ flutter:
 
   assets:
     - assets/
-    - assets/animations/
-    - assets/svg/icons/
-    - assets/svg/
+    - assets/appicon/
 
 
 flutter_native_splash:
   color: "#ffffff"
-  image: "assets/svg/icons/appstore.png"
+  image: "assets/appicon/appstore.png"
   android: true
   ios: true
 
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/svg/icons/appstore.png"
+  image_path: "assets/appicon/appstore.png"
   min_sdk_version: 21 # android min sdk min:16, default 21
   web:
     generate: true
-    image_path: "assets/svg/icons/appstore.png"
+    image_path: "assets/appicon/appstore.png"
     background_color: "#hexcode"
     theme_color: "#hexcode"
   windows:
     generate: true
-    image_path: "assets/svg/icons/appstore.png"
+    image_path: "assets/appicon/appstore.png"
     icon_size: 48 # min:48, max:256, default: 48
   macos:
     generate: true
-    image_path: "assets/svg/icons/appstore.png"
+    image_path: "assets/appicon/appstore.png"

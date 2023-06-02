@@ -55,7 +55,7 @@ class _ScreenYummysState extends State<ScreenYummys>
           );
         },
       )
-      ..loadRequest(Uri.parse('https://www.zomato.com/india'));
+      ..loadRequest(Uri.parse('https://www.zomato.com/nashik'));
 
     _controller = controller;
   }
