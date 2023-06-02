@@ -61,7 +61,7 @@ Page resource error:
           ''');
           },
           onNavigationRequest: (NavigationRequest request) {
-            if (request.url.startsWith('https://www.gofoodieonline.com/trackorder')) {
+            if (request.url.startsWith('https://www.zomato.com/account/reviews')) {
               debugPrint('Blocking navigation to ${request.url}');
               return NavigationDecision.prevent;
             }

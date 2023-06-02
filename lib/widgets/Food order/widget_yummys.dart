@@ -74,7 +74,7 @@ Page resource error:
           );
         },
       )
-      ..loadRequest(Uri.parse('https://eatstandardyummys.dotpe.in/store/1/delivery'));
+      ..loadRequest(Uri.parse('https://www.zomato.com/india'));
 
     _controller = controller;
   }
