@@ -1,4 +1,6 @@
 // ignore_for_file: depend_on_referenced_packages
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_android/webview_flutter_android.dart';
@@ -45,14 +47,14 @@ class _ScreenGroceryState extends State<ScreenGrocery> {
           onNavigationRequest: (NavigationRequest request) {
             if (request.url.startsWith(
                 'https://www.flipkart.com/grocery-supermart-store?marketplace=GROCERY&fm=neo%2Fmerchandising&iid=M_c8d2013b-6358-4656-be7e-acd7775c1574_1_372UD5BXDFYS_MC.CBUR1Q46W5F1&otracker=hp_rich_navigation_1_1.navigationCard.RICH_NAVIGATION_Grocery_CBUR1Q46W5F1&otracker1=hp_rich_navigation_PINNED_neo%2Fmerchandising_NA_NAV_EXPANDABLE_navigationCard_cc_1_L0_view-all&cid=CBUR1Q46W5F1')) {
-              debugPrint('Blocking navigation to ${request.url}');
+              log('Blocking navigation to ${request.url}');
               return NavigationDecision.prevent;
             }
-            debugPrint('Allowing navigation to ${request.url}');
+            log('Allowing navigation to ${request.url}');
             return NavigationDecision.navigate;
           },
           onUrlChange: (UrlChange change) {
-            debugPrint('URL changed to ${change.url}');
+            log('URL changed to ${change.url}');
           },
         ),
       )
