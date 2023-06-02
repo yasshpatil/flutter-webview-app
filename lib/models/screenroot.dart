@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:web_view/widgets/Grocery/widget_grocery.dart';
-import '../widgets/Food order/widget_yummys.dart';
+import 'package:web_view/widgets/grocery/widget_grocery.dart';
+import '../widgets/food order/widget_yummys.dart';
 
 
 class ScreenRoot extends StatefulWidget {
