@@ -1,22 +1,23 @@
 // ignore_for_file: depend_on_referenced_packages
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 
 void main() {
-  runApp(const MaterialApp(home: ScreenYummys()));
+  runApp(const MaterialApp(home: WidgetMyGlossaryOrder()));
 }
 
-class ScreenYummys extends StatefulWidget {
-  const ScreenYummys({Key? key}) : super(key: key);
+class WidgetMyGlossaryOrder extends StatefulWidget {
+  const WidgetMyGlossaryOrder({Key? key}) : super(key: key);
 
   @override
-  State<ScreenYummys> createState() => _ScreenYummysState();
+  State<WidgetMyGlossaryOrder> createState() => _WidgetMyGlossaryOrderState();
 }
 
-class _ScreenYummysState extends State<ScreenYummys> {
+class _WidgetMyGlossaryOrderState extends State<WidgetMyGlossaryOrder> {
   late final WebViewController _controller;
 
   @override
@@ -43,34 +44,16 @@ class _ScreenYummysState extends State<ScreenYummys> {
       ..setBackgroundColor(const Color(0x00000000))
       ..setNavigationDelegate(
         NavigationDelegate(
-          onProgress: (int progress) {
-            debugPrint('WebView is loading (progress: $progress%)');
-          },
-          onPageStarted: (String url) {
-            debugPrint('Page started loading: $url');
-          },
-          onPageFinished: (String url) {
-            debugPrint('Page finished loading: $url');
-          },
-          onWebResourceError: (WebResourceError error) {
-            debugPrint('''
-Page resource error:
-  code: ${error.errorCode}
-  description: ${error.description}
-  errorType: ${error.errorType}
-  isForMainFrame: ${error.isForMainFrame}
-          ''');
-          },
           onNavigationRequest: (NavigationRequest request) {
-            if (request.url.startsWith('https://orders.yummys.in/')) {
-              debugPrint('Blocking navigation to ${request.url}');
+            if (request.url.startsWith('https://www.flipkart.com/s')) {
+              log('Blocking navigation to ${request.url}');
               return NavigationDecision.prevent;
             }
-            debugPrint('Allowing navigation to ${request.url}');
+            log('Allowing navigation to ${request.url}');
             return NavigationDecision.navigate;
           },
           onUrlChange: (UrlChange change) {
-            debugPrint('URL changed to ${change.url}');
+            log('URL changed to ${change.url}');
           },
         ),
       )
@@ -82,7 +65,7 @@ Page resource error:
           );
         },
       )
-      ..loadRequest(Uri.parse('https://orders.yummys.in/'));
+      ..loadRequest(Uri.parse('https://www.flipkart.com/'));
 
     // #docregion platform_features
     if (controller.platform is AndroidWebViewController) {
@@ -108,3 +91,4 @@ Page resource error:
     );
   }
 }
+

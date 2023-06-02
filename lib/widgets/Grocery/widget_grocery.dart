@@ -1,21 +1,23 @@
 // ignore_for_file: depend_on_referenced_packages
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 
 void main() {
-  runApp(const MaterialApp(home: ScreenMyFoodOrder()));
+  runApp(const MaterialApp(home: ScreenGrocery()));
 }
 
-class ScreenMyFoodOrder extends StatefulWidget {
-  const ScreenMyFoodOrder({Key? key}) : super(key: key);
+class ScreenGrocery extends StatefulWidget {
+  const ScreenGrocery({Key? key}) : super(key: key);
 
   @override
-  State<ScreenMyFoodOrder> createState() => _ScreenMyFoodOrderState();
+  State<ScreenGrocery> createState() => _ScreenGroceryState();
 }
 
-class _ScreenMyFoodOrderState extends State<ScreenMyFoodOrder> {
+class _ScreenGroceryState extends State<ScreenGrocery> {
   late final WebViewController _controller;
 
   @override
@@ -42,34 +44,17 @@ class _ScreenMyFoodOrderState extends State<ScreenMyFoodOrder> {
       ..setBackgroundColor(const Color(0x00000000))
       ..setNavigationDelegate(
         NavigationDelegate(
-          onProgress: (int progress) {
-            debugPrint('WebView is loading (progress: $progress%)');
-          },
-          onPageStarted: (String url) {
-            debugPrint('Page started loading: $url');
-          },
-          onPageFinished: (String url) {
-            debugPrint('Page finished loading: $url');
-          },
-          onWebResourceError: (WebResourceError error) {
-            debugPrint('''
-Page resource error:
-  code: ${error.errorCode}
-  description: ${error.description}
-  errorType: ${error.errorType}
-  isForMainFrame: ${error.isForMainFrame}
-          ''');
-          },
           onNavigationRequest: (NavigationRequest request) {
-            if (request.url.startsWith('https://www.gofoodieonline.com/trackorder')) {
-              debugPrint('Blocking navigation to ${request.url}');
+            if (request.url.startsWith(
+                'https://www.flipkart.com/grocery-supermart-store?marketplace=GROCERY&cmpid=grocery_perf_search_new&cmpid=grocery_perf_search_new')) {
+              log('Blocking navigation to ${request.url}');
               return NavigationDecision.prevent;
             }
-            debugPrint('Allowing navigation to ${request.url}');
+            log('Allowing navigation to ${request.url}');
             return NavigationDecision.navigate;
           },
           onUrlChange: (UrlChange change) {
-            debugPrint('URL changed to ${change.url}');
+            log('URL changed to ${change.url}');
           },
         ),
       )
@@ -81,7 +66,8 @@ Page resource error:
           );
         },
       )
-      ..loadRequest(Uri.parse('https://www.gofoodieonline.com/trackorder'));
+      ..loadRequest(Uri.parse(
+          'https://www.flipkart.com/grocery-supermart-store?marketplace=GROCERY&cmpid=grocery_perf_search_new&cmpid=grocery_perf_search_new'));
 
     // #docregion platform_features
     if (controller.platform is AndroidWebViewController) {
@@ -107,4 +93,3 @@ Page resource error:
     );
   }
 }
-
