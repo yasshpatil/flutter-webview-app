@@ -30,6 +30,7 @@ dependencies:
   webview_flutter: ^4.2.0
   http: ^0.13.5
   url_launcher: ^6.1.11
+  geolocator: ^9.0.2
 
 dev_dependencies:
   flutter_test:

@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:web_view/models/model_provider.dart';
 import 'package:web_view/models/screenroot.dart';
+import 'package:geolocator/geolocator.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Request location permissions
+  await Geolocator.requestPermission();
+
   runApp(
     MultiProvider(
       providers: [
@@ -13,8 +19,6 @@ void main() {
     ),
   );
 }
-
-final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -27,7 +31,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Lato',
         primarySwatch: const MaterialColor(
           0xFF000000,
-          <int, Color>{
+          <int, Color>{ 
             50: Color(0xFF000000),
             100: Color(0xFF000000),
             200: Color(0xFF000000),
@@ -37,7 +41,7 @@ class MyApp extends StatelessWidget {
             600: Color(0xFF000000),
             700: Color(0xFF000000),
             800: Color(0xFF000000),
-            900: Color(0xFF000000),
+            900: Color(0xFF000000), 
           },
         ),
         radioTheme: RadioThemeData(
