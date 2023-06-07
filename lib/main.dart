@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:web_view/models/model_provider.dart';
 import 'package:web_view/models/screenroot.dart';
-
 void main() {
   runApp(
     MultiProvider(
