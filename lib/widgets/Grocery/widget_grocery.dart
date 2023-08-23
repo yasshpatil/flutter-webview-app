@@ -60,11 +60,7 @@ class _ScreenGroceryState extends State<ScreenGrocery> {
       )
       ..addJavaScriptChannel(
         'Toaster',
-        onMessageReceived: (JavaScriptMessage message) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(message.message)),
-          );
-        },
+        
       )
       ..loadRequest(Uri.parse(
           'https://www.flipkart.com/grocery-supermart-store?marketplace=GROCERY&cmpid=grocery_perf_search_new&cmpid=grocery_perf_search_new'));
